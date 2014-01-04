@@ -1,5 +1,5 @@
-isViewing = (viewName)->
-	Session.get('currentView') is viewName
+isViewing = (viewName...)->
+	unless Session.get('currentView') is v in viewName
 
 Template.main.events 
 	'click a[href^= "/" ]' : (e,t) ->
