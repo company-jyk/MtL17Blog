@@ -1,4 +1,10 @@
 Meteor.subscribe "postsChannel"
+
+@adminLoggedIn = () ->
+	admins = ['j@k.com','h@l.com']
+	return admins.indexOf( Meteor.user()?.emails[0]?.address ) >-1 
+#is "j@k.com"
+
 BlogRouter = Backbone.Router.extend
 	routes: 
 		"": "main"
